@@ -1,0 +1,125 @@
+[
+  {
+    "name": "Downloadable Photography Guides for Beginners",
+    "image": "https://capturetheatlas.com/wp-content/uploads/2020/11/photography-basics-for-beginners-PDF.jpg",
+    "subServices": [
+      "Ultimate FREE Guide to Photography for Beginners",
+      "The dPS Ultimate Guide to Photography Terms"
+    ],
+    "user": "10k",
+    "like": "8k",
+    "dislike": "1k",
+    "key": "1"
+  },
+  {
+    "name": "The Basics of Exposure",
+    "image": "https://i.ytimg.com/vi/aqp9Y9mf_M0/maxresdefault.jpg",
+    "subServices": [
+      "Learning about Exposure – The Exposure Triangle",
+      "Introduction to ISO in Digital Photography",
+      "Introduction to Aperture in Digital Photography",
+      "Understanding Exposure – Book Review"
+    ],
+    "user": "8k",
+    "like": "6k",
+    "dislike": "600",
+    "key": "2"
+  },
+  {
+    "name": "Learning to Use Digital Camera Settings and Features",
+    "image": "https://www.adorama.com/alc/wp-content/uploads/2020/01/PARTS-OF-A-CAMERA-2-825x465.png",
+    "subServices": [
+      "Aperture and Shutter Priority Modes",
+      "Introduction to White Balance",
+      "Understanding Histograms",
+      "Automatic Exposure Bracketing (AEB)"
+    ],
+    "user": "9k",
+    "like": "7k",
+    "dislike": "700",
+    "key": "3"
+  },
+  {
+    "name": "Handling and Caring for a Digital Camera",
+    "image": "https://www.lightstalking.com/wp-content/uploads/2015/02/11779317145_1a6c1355fd_z.jpg",
+    "subServices": [
+      "How to Hold a Digital Camera",
+      "Shutter Release Technique",
+      "How to Avoid a Dirty DSLR Image Sensor",
+      "How to Clean a DSLR Lens"
+    ],
+    "user": "7k",
+    "like": "5k",
+    "dislike": "1k",
+    "key": "4"
+  },
+  {
+    "name": "Other Beginner Photography Tutorials and Tips",
+    "image": "https://artisanhd.com/wp-content/uploads/2019/04/free-online-digital-photography-tutorials-man-holding-camera.jpg",
+    "subServices": [
+      "100 Things I’ve Learned About Photography",
+      "11 Tips for Beginner Photographers",
+      "Using Fill Flash",
+      "Shooting with an In Camera Flash",
+      "13 Lessons to Teach Your Child about Photography"
+    ],
+    "user": "11k",
+    "like": "9k",
+    "dislike": "1.5k",
+    "key": "5"
+  },
+  {
+    "name": "Common Digital Photography Problems and Questions Answered",
+    "image": "https://thumbs.dreamstime.com/b/q-questions-answers-q-questions-answers-wooden-cubes-159834677.jpg",
+    "subServices": [
+      "7 Strategies for Avoiding Flash Blow Out",
+      "Crop Factor Explained",
+      "Complete Digital Photography – Book Review",
+      "The Digital Photography Book – Book Review"
+    ],
+    "user": "6k",
+    "like": "4k",
+    "dislike": "500",
+    "key": "6"
+  },
+  {
+    "name": "A Beginners Guide to Seascape Photography",
+    "image": "https://n6k9j2w7.rocketcdn.me/wp-content/uploads/2019/05/Landscape-Photography-Guide-For-Beginners.jpg",
+    "subServices": [
+      "Macro Photography Tips for Point and Shoot Compact Digital Cameras",
+      "Ultimate FREE Guide to Photography for Beginners",
+      "The dPS Ultimate Guide to Photography Terms"
+    ],
+    "user": "10k",
+    "like": "8k",
+    "dislike": "1k",
+    "key": "7"
+  },
+  {
+    "name": "Nature and Wildlife Photography Tips for Beginners",
+    "image": "https://shotkit.com/wp-content/uploads/2020/11/photography-beginners.jpg",
+    "subServices": [
+      "Understanding Exposure – Book Review",
+      "Introduction to Shutter Speed in Digital Photography",
+      "Introduction to Aperture in Digital Photography"
+    ],
+    "user": "8k",
+    "like": "6k",
+    "dislike": "600",
+    "key": "8"
+  },
+  {
+    "name": "Bird Photography Tips for Beginners",
+    "image": "https://businessofphotography.net/wp-content/uploads/2020/08/Five-Bird-Photography-Tips-For-Rookies.jpg",
+    "subServices": [
+      "Introduction to White Balance",
+      "Introduction to EXIF Data",
+      "Aperture and Shutter Priority Modes",
+      "Automatic Exposure Bracketing (AEB)"
+    ],
+    "user": "9k",
+    "like": "7k",
+    "dislike": "700",
+    "key": "9"
+  }
+]

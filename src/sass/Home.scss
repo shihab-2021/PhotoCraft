@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Akronim&family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Pacifico&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+#showcase {
+  min-height: 450px;
+  background: url(https://i.ytimg.com/vi/BEm8MzrdkJ0/maxresdefault.jpg) center
+    center / cover;
+  color: #ffffff;
+  display: flex;
+  position: relative;
+  z-index: 1;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: -1;
+  }
+}
+.logo {
+  font-family: "Lobster", cursive;
+  color: salmon;
+  margin-right: 50px;
+  padding: 0;
+}
+Button {
+  width: max-content;
+}
+.slogan {
+  font-family: "Anton", sans-serif;
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+.details {
+  padding: 10px;
+  transition: 0.6s;
+  border: 1px solid cyan;
+  border-radius: 10px;
+  min-height: 360px;
+}
+.details:hover {
+  box-shadow: 4px 4px 7px gray;
+  border-radius: 10px;
+  border: 1px solid cyan;
+}
+.product-image {
+  width: 150px;
+  height: 150px;
+}

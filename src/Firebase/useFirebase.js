@@ -99,6 +99,22 @@ const useFirebase = () => {
       })
       .finally(() => setIsLoading(false));
   };
+  // Login user with Email Password
+  const loginUser = (email, password, location, history) => {
+    setIsLoading(true);
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const destination = location?.state?.from || "/";
+        // history.replace(destination);
+        history(destination);
+        setAuthError("");
+      })
+      .catch((error) => {
+        setAuthError(error.message);
+        console.log(error.message);
+      })
+      .finally(() => setIsLoading(false));
+  };
 
   // Register user with Email Password
   const registerUser = (email, password, name, history) => {
@@ -137,21 +153,6 @@ const useFirebase = () => {
     }).then();
   };
 
-  // Login user with Email Password
-  const loginUser = (email, password, location, history) => {
-    setIsLoading(true);
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const destination = location?.state?.from || "/";
-        // history.replace(destination);
-        history(destination);
-        setAuthError("");
-      })
-      .catch((error) => {
-        setAuthError(error.message);
-      })
-      .finally(() => setIsLoading(false));
-  };
 
   // user observation
   useEffect(() => {
@@ -191,7 +192,7 @@ const useFirebase = () => {
           setIsLoading(false);
         });
     }
-  }, [user?.email]);
+  }, [user?.email, auth]);
 
   // useEffect(() => {
   //   fetch(`http://localhost:5000/users/${user.email}`)

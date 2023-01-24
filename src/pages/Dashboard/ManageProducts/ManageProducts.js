@@ -12,7 +12,7 @@ const ManageProducts = () => {
       .then((data) => setProducts(data))
       .then(() => setIsLoading(false));
   }, []);
-  console.log(products.result);
+  console.log(products);
   const handleDeleteProduct = (id) => {
     const proceed = window.confirm("Are you sure, you want to delete?", id);
     console.log(id);
@@ -44,7 +44,7 @@ const ManageProducts = () => {
       )}
       {!isLoading && (
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-2 py-5">
-          {products?.result.map((singleProduct) => (
+          {products?.map((singleProduct) => (
             <div key={singleProduct._id} className="col">
               <div>
                 <div className="card shadow" style={{ minHeight: "515px" }}>
@@ -63,13 +63,6 @@ const ManageProducts = () => {
                     <h6 className="card-title">
                       {singleProduct.product_name?.slice(0, 50)} ...
                     </h6>
-                    <Rating
-                      style={{ fontSize: "15px" }}
-                      name="half-rating-read"
-                      value={`${singleProduct.rating}`}
-                      precision={0.5}
-                      readOnly
-                    />
                   </div>
                   {/* <div
                     className="text-center py-2"

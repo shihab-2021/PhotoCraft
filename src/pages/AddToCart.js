@@ -18,7 +18,7 @@ const AddToCart = () => {
       setCarData(newCarData);
     };
     const handleProductDateSubmit = (e) => {
-      const product = { ...carData, email: user?.email, product_id: itemDetail[0]?._id };
+      const product = { ...carData, email: user?.email, product: itemDetail[0], condition: "pending" };
       console.log(product);
       fetch("http://localhost:5000/booking", {
         method: "POST",
@@ -73,7 +73,7 @@ const AddToCart = () => {
             <TextField
               sx={{ width: "95%", m: 1 }}
               id="standard-basic"
-              label="email"
+              label=""
               name="email"
               value={user.email}
               variant="standard"
@@ -108,10 +108,6 @@ const AddToCart = () => {
             {/* {isLoading && <CircularProgress />} */}
           </form>
         </Container>
-        But when they click the buy now button it goes to the checkout page and
-        fills up information(Name, Email, Address Phone) and order this service.
-        (Note: this is a protected page after log in done then go to the
-        checkout page)
       </div>
     );
 };

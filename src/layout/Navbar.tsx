@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import useAuth from "../Firebase/useAuth";
 import useFirebase from "../Firebase/useFirebase";
 import "../sass/Navbar.scss";
 
 const Navbar = () => {
-  const { user, logout } = useFirebase();
-  const userInfo:any = user;
+  const { user, admin, logout } = useAuth();
+  console.log(admin);
+  const userInfo: any = user;
   return (
     <div>
       <div>
@@ -42,33 +44,52 @@ const Navbar = () => {
                     About
                   </Link>
                 </li>
-                <div className="btn-group">
-                  <button
-                    className="btn btn-outline-info dropdown-toggle"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Dropdown
-                  </button>
-                  <ul className="dropdown-menu">
-                    <li>
-                      <Link className="dropdown-item" to="/addAProduct">
-                        Add Product
-                      </Link>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        Menu item
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        Menu item
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+                {userInfo?.email && (
+                  <div className="btn-group">
+                    <button
+                      className="btn btn-outline-info dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Dashboard
+                    </button>
+                    {admin && (
+                      <ul className="dropdown-menu">
+                        <li>
+                          <Link className="dropdown-item" to="/addAProduct">
+                            Add Product
+                          </Link>
+                        </li>
+                        <li>
+                          <Link className="dropdown-item" to="/makeAdmin">
+                            Make Admin
+                          </Link>
+                        </li>
+                        <li>
+                          <Link className="dropdown-item" to="/manageAllOrders">
+                            Manage Orders
+                          </Link>
+                        </li>
+                        <li>
+                          <Link className="dropdown-item" to="/manageProducts">
+                            Manage Services
+                          </Link>
+                        </li>
+                      </ul>
+                    )}
+                    {userInfo?.email && (
+                      <ul className="dropdown-menu">
+                        <li>
+                          <Link className="dropdown-item" to="/myOrder">
+                            My Order
+                          </Link>
+                        </li>
+                      </ul>
+                    )}
+                  </div>
+                )}
+
                 <li className="mx-3">
                   <p className="text-warning tw-bold">
                     {userInfo?.displayName}

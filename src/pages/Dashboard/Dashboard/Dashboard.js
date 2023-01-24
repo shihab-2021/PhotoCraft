@@ -260,7 +260,7 @@ function ResponsiveDrawer(props) {
           <Route path="makeAdmin" element={<MakeAdmin />} />
           <Route path="manageAllOrders" element={<ManageAllOrders />} />
           <Route path="manageProducts" element={<ManageProducts />} /> */}
-          <Route path="addAProduct" element={<AddAProduct />} />
+          <Route exact path="/dashboard/addAProduct" element={<AddAProduct />} />
         </Routes>
       </Box>
     </Box>

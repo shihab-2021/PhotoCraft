@@ -11,6 +11,9 @@ import Register from "./Register";
 import AdminRoute from "../PrivetRoute/AdminRoute";
 import Details from "./Details";
 import AddToCart from "./AddToCart";
+import ManageAllOrders from "./Dashboard/ManageAllOrders/ManageAllOrders";
+import MakeAdmin from "./Dashboard/MakeAdmin/MakeAdmin";
+import MyOrders from "./Dashboard/MyOrders/MyOrders";
 
 const router = createBrowserRouter([
   {
@@ -39,7 +42,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/addToCart/:productId",
-        element: <AddToCart></AddToCart>,
+        element: (
+          <PrivateRoute>
+            <AddToCart></AddToCart>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/services",
@@ -50,8 +57,12 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/dashboard",
-        element: <Dashboard></Dashboard>,
+        path: "/myOrder",
+        element: (
+          <PrivateRoute>
+            <MyOrders></MyOrders>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/addAProduct",
@@ -62,8 +73,28 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/dashboard/manageProducts",
-        element: <ManageProducts></ManageProducts>,
+        path: "/manageAllOrders",
+        element: (
+          <AdminRoute>
+            <ManageAllOrders></ManageAllOrders>
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "/manageProducts",
+        element: (
+          <AdminRoute>
+            <ManageProducts></ManageProducts>
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "/makeAdmin",
+        element: (
+          <AdminRoute>
+            <MakeAdmin></MakeAdmin>
+          </AdminRoute>
+        ),
       },
       // {
       //   path: "/dashboard/makeAdmin",

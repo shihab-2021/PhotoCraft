@@ -8,7 +8,7 @@ const MyOrders = () => {
   const [userOrders, setUserOrders] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    const url = `https://onstech-server-side-code.onrender.com/booking?email=${user.email}`;
+    const url = `http://localhost:5000/booking?email=${user.email}`;
     fetch(url, {
       headers: {
         authorization: `Bearer ${token}`,
@@ -22,7 +22,7 @@ const MyOrders = () => {
   const handleDeleteUserService = (id) => {
     const proceed = window.confirm("Are you sure, you want to delete?", id);
     if (proceed) {
-      const url = `https://onstech-server-side-code.onrender.com/booking/${id}`;
+      const url = `http://localhost:5000/booking/${id}`;
       fetch(url, {
         method: "DELETE",
       })
@@ -39,7 +39,7 @@ const MyOrders = () => {
     }
   };
   return (
-    <div>
+    <div className="container py-4">
       <h1 className="heading text-success">MY ORDERS</h1>
       {isLoading && (
         <div className="d-flex align-items-center my-5 py-5">
@@ -66,7 +66,7 @@ const MyOrders = () => {
               <div className="row g-0">
                 <div className="col-md-4 d-flex align-items-center">
                   <img
-                    src={userOrder.product_Detail?.image1}
+                    src={userOrder.product?.image1}
                     className="img-fluid p-2"
                     alt="..."
                   />
@@ -74,9 +74,9 @@ const MyOrders = () => {
                 <div className="col-md-8">
                   <div className="card-body">
                     <h5 className="card-title fw-bold">
-                      {userOrder.product_Detail?.product_name?.slice(0, 50)} ...
+                      {userOrder.product?.product_name?.slice(0, 50)} ...
                     </h5>
-                    <h6>PRICE: ${userOrder.product_Detail?.product_price}</h6>
+                    <h6>PRICE: ${userOrder.product?.product_price}</h6>
                     <p
                       className="border border-warning rounded-pill d-inline p-1"
                       style={{ backgroundColor: "#dbe3e3" }}
@@ -86,7 +86,7 @@ const MyOrders = () => {
                       </small>
                     </p>
                     <div className="mt-2">
-                      <div className="mb-2">
+                      {/* <div className="mb-2">
                         <Link
                           to="/dashboard/review"
                           className="w-50 text-center my-2 link"
@@ -95,10 +95,10 @@ const MyOrders = () => {
                             <i className="far fa-comment"></i> Give Feedback
                           </button>
                         </Link>
-                      </div>
+                      </div> */}
                       <div>
                         <Link
-                          to={`/details/${userOrder.product_Detail?._id}`}
+                          to={`/details/${userOrder.product?._id}`}
                           className="w-50 text-center my-2 link me-2"
                         >
                           <button className="btn btn-outline-info">

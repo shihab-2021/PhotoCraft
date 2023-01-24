@@ -54,10 +54,6 @@
 
 // export default useFirebase;
 
-
-
-
-
 import { useEffect, useState } from "react";
 import initializeFirebase from "../Firebase/firebase.init";
 import {
@@ -79,6 +75,7 @@ const useFirebase = () => {
   const [user, setUser] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [authError, setAuthError] = useState("");
+  const [adminInfo, setAdminInfo] = useState({});
   const [admin, setAdmin] = useState(false);
   const [token, setToken] = useState("");
 
@@ -129,6 +126,7 @@ const useFirebase = () => {
 
   // Save User Information
   const userData = (email, displayName, method) => {
+    console.log("came here");
     const user = { email, displayName };
     fetch("http://localhost:5000/users", {
       method: method,
@@ -165,8 +163,8 @@ const useFirebase = () => {
         });
       } else {
         setUser({});
-      }
       setIsLoading(false);
+      }
     });
     return () => unsubscribed;
   }, [auth]);
@@ -183,12 +181,24 @@ const useFirebase = () => {
       })
       .finally(() => setIsLoading(false));
   };
-
   useEffect(() => {
-    fetch(`http://localhost:5000/users/${user.email}`)
-      .then((res) => res.json())
-      .then((data) => setAdmin(data.admin));
-  }, [user.email]);
+    if (user?.email) {
+      fetch(`http://localhost:5000/users/${user.email}`)
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          setAdmin(data.admin);
+          setIsLoading(false);
+        });
+    }
+  }, [user?.email]);
+
+  // useEffect(() => {
+  //   fetch(`http://localhost:5000/users/${user.email}`)
+  //     .then((res) => res.json())
+  //     .then((data) => setAdmin(data.admin));
+  // }, [user?.email, admin]);
+  console.log(admin);
   return {
     user,
     signInWithGoogle,

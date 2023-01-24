@@ -42,13 +42,37 @@ const Navbar = () => {
                     About
                   </Link>
                 </li>
-                <li className="nav-item me-3">
-                  <Link to="/tutorial" className="navLink">
-                    Tutorial
-                  </Link>
-                </li>
+                <div className="btn-group">
+                  <button
+                    className="btn btn-outline-info dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Dropdown
+                  </button>
+                  <ul className="dropdown-menu">
+                    <li>
+                      <Link className="dropdown-item" to="/addAProduct">
+                        Add Product
+                      </Link>
+                    </li>
+                    <li>
+                      <a className="dropdown-item" href="#">
+                        Menu item
+                      </a>
+                    </li>
+                    <li>
+                      <a className="dropdown-item" href="#">
+                        Menu item
+                      </a>
+                    </li>
+                  </ul>
+                </div>
                 <li className="mx-3">
-                  <p className="text-warning tw-bold">{userInfo?.displayName}</p>
+                  <p className="text-warning tw-bold">
+                    {userInfo?.displayName}
+                  </p>
                 </li>
                 {userInfo?.email ? (
                   <button

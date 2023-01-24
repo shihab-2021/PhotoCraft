@@ -12,7 +12,7 @@ import useFirebase from "../Firebase/useFirebase";
 
 const Login = () => {
   const [loginData, setLoginData] = useState({});
-  const { user, loginUser, signInWithGoogle, isLoading, authError } = useAuth();
+  const { loginUser, signInWithGoogle, isLoading, authError } = useFirebase();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");

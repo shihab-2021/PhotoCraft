@@ -13,7 +13,7 @@ const AddAProduct = () => {
   };
   const handleProductDateSubmit = (e) => {
     const product = { ...carData };
-    fetch("https://onstech-server-side-code.onrender.com/products", {
+    fetch("http://localhost:5000/services", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -65,72 +65,8 @@ const AddAProduct = () => {
         <TextField
           sx={{ width: "95%", m: 1 }}
           id="standard-basic"
-          label="Brand"
-          name="brand"
-          onBlur={handleOnBlur}
-          variant="standard"
-        />
-        <TextField
-          sx={{ width: "95%", m: 1 }}
-          id="standard-basic"
-          label="Screen Size"
-          name="screen_size"
-          onBlur={handleOnBlur}
-          variant="standard"
-        />
-        <TextField
-          sx={{ width: "95%", m: 1 }}
-          id="standard-basic"
-          label="Rating"
-          name="rating"
-          onBlur={handleOnBlur}
-          variant="standard"
-        />
-        <TextField
-          sx={{ width: "95%", m: 1 }}
-          id="standard-basic"
-          label="Review"
-          name="review"
-          onBlur={handleOnBlur}
-          variant="standard"
-        />
-        <TextField
-          sx={{ width: "95%", m: 1 }}
-          id="standard-basic"
-          label="CPU"
-          name="cpu"
-          onBlur={handleOnBlur}
-          variant="standard"
-        />
-        <TextField
-          sx={{ width: "95%", m: 1 }}
-          id="standard-basic"
           label="Image url-1"
           name="image1"
-          onBlur={handleOnBlur}
-          variant="standard"
-        />
-        <TextField
-          sx={{ width: "95%", m: 1 }}
-          id="standard-basic"
-          label="Image url-2"
-          name="image2"
-          onBlur={handleOnBlur}
-          variant="standard"
-        />
-        <TextField
-          sx={{ width: "95%", m: 1 }}
-          id="standard-basic"
-          label="Image url-3"
-          name="image3"
-          onBlur={handleOnBlur}
-          variant="standard"
-        />
-        <TextField
-          sx={{ width: "95%", m: 1 }}
-          id="standard-basic"
-          label="Image url-4"
-          name="image4"
           onBlur={handleOnBlur}
           variant="standard"
         />

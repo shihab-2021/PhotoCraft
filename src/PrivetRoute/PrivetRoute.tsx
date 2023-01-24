@@ -28,24 +28,9 @@ const PrivateRoute = ({ children, ...rest }: ButtonProps) => {
   const path: any = location.pathname;
   console.log(path);
   if (userInfo?.email) {
-    // return <Navigate to={path} state={{ from: location }} replace />;
-    // console.log(path);
     return children;
-    // return <Navigate to={path} replace />;
-  } else
-    return (
-      <Navigate to="/login" state={{ from: location }} replace />
-      // <Route
-      //   {...rest}
-      //   render={({ location }) =>
-      //     user.email ? (
-      //       children
-      //     ) : (
-      //       navigate("/login")
-      //     )
-      //   }
-      // ></Route>
-    );
+  }
+  return <Navigate to="/login" state={{ from: location }} replace />;
 };
 
 export default PrivateRoute;

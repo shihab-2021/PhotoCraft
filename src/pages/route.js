@@ -6,6 +6,11 @@ import Main from "../layout/Main";
 import Login from "./Login";
 import Dashboard from "./Dashboard/Dashboard/Dashboard";
 import AddAProduct from "./Dashboard/AddAProduct/AddAProduct";
+import ManageProducts from "./Dashboard/ManageProducts/ManageProducts";
+import Register from "./Register";
+import AdminRoute from "../PrivetRoute/AdminRoute";
+import Details from "./Details";
+import AddToCart from "./AddToCart";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +30,18 @@ const router = createBrowserRouter([
         element: <Login></Login>,
       },
       {
+        path: "/signup",
+        element: <Register></Register>,
+      },
+      {
+        path: "/details/:productId",
+        element: <Details />,
+      },
+      {
+        path: "/addToCart/:productId",
+        element: <AddToCart></AddToCart>,
+      },
+      {
         path: "/services",
         element: (
           <PrivateRoute>
@@ -37,8 +54,16 @@ const router = createBrowserRouter([
         element: <Dashboard></Dashboard>,
       },
       {
-        path: "/dashboard/addAProduct",
-        element: <AddAProduct></AddAProduct>
+        path: "/addAProduct",
+        element: (
+          <AdminRoute>
+            <AddAProduct></AddAProduct>
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "/dashboard/manageProducts",
+        element: <ManageProducts></ManageProducts>,
       },
       // {
       //   path: "/dashboard/makeAdmin",

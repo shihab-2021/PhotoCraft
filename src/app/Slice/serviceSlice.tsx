@@ -5,12 +5,12 @@ import axios from "axios";
 export const fetchServices = createAsyncThunk(
   "services/fetchServices",
   async () => {
-    // const response = await fetch("./data.json");
-    // const data = await response.json();
-    // console.log(data);
-    // return data;
-    const response = await axios.get("./data.json");
-    return response.data;
+    const response = await fetch("http://localhost:5000/services");
+    const data = await response.json();
+    console.log(data);
+    return data;
+    // const response = await axios.get("http://localhost:5000/services");
+    // return response.data;
   }
 );
 

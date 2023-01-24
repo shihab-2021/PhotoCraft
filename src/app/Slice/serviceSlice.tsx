@@ -5,11 +5,11 @@ import axios from "axios";
 export const fetchServices = createAsyncThunk(
   "services/fetchServices",
   async () => {
-    const response = await fetch("http://localhost:5000/services");
+    const response = await fetch("https://photo-craft.vercel.app/services");
     const data = await response.json();
     console.log(data);
     return data;
-    // const response = await axios.get("http://localhost:5000/services");
+    // const response = await axios.get("https://photo-craft.vercel.app/services");
     // return response.data;
   }
 );
@@ -44,7 +44,7 @@ const servicesSlice = createSlice({
       (state, action: PayloadAction<service[]>) => {
         state.loading = false;
         state.services = action.payload;
-        state.error = '';
+        state.error = "";
       }
     );
     builder.addCase(fetchServices.rejected, (state, action) => {

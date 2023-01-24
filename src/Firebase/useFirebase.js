@@ -144,7 +144,7 @@ const useFirebase = () => {
   const userData = (email, displayName, method) => {
     console.log("came here");
     const user = { email, displayName };
-    fetch("http://localhost:5000/users", {
+    fetch("https://photo-craft.vercel.app/users", {
       method: method,
       headers: {
         "content-type": "application/json",
@@ -152,7 +152,6 @@ const useFirebase = () => {
       body: JSON.stringify(user),
     }).then();
   };
-
 
   // user observation
   useEffect(() => {
@@ -164,7 +163,7 @@ const useFirebase = () => {
         });
       } else {
         setUser({});
-      setIsLoading(false);
+        setIsLoading(false);
       }
     });
     return () => unsubscribed;
@@ -184,7 +183,7 @@ const useFirebase = () => {
   };
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:5000/users/${user.email}`)
+      fetch(`https://photo-craft.vercel.app/users/${user.email}`)
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
@@ -195,7 +194,7 @@ const useFirebase = () => {
   }, [user?.email, auth]);
 
   // useEffect(() => {
-  //   fetch(`http://localhost:5000/users/${user.email}`)
+  //   fetch(`https://photo-craft.vercel.app/users/${user.email}`)
   //     .then((res) => res.json())
   //     .then((data) => setAdmin(data.admin));
   // }, [user?.email, admin]);

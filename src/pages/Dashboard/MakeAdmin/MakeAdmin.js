@@ -13,7 +13,7 @@ const MakeAdmin = () => {
   const handleAdminSubmit = (e) => {
     const send = { email, admin: user.email };
     console.log(send);
-    fetch("http://localhost:5000/users/admin", {
+    fetch("https://photo-craft.vercel.app/users/admin", {
       method: "PUT",
       headers: {
         "content-type": "application/json",

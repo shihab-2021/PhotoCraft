@@ -8,7 +8,7 @@ const MyOrders = () => {
   const [userOrders, setUserOrders] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    const url = `http://localhost:5000/booking?email=${user.email}`;
+    const url = `https://photo-craft.vercel.app/booking?email=${user.email}`;
     fetch(url, {
       headers: {
         authorization: `Bearer ${token}`,
@@ -22,7 +22,7 @@ const MyOrders = () => {
   const handleDeleteUserService = (id) => {
     const proceed = window.confirm("Are you sure, you want to delete?", id);
     if (proceed) {
-      const url = `http://localhost:5000/booking/${id}`;
+      const url = `https://photo-craft.vercel.app/booking/${id}`;
       fetch(url, {
         method: "DELETE",
       })

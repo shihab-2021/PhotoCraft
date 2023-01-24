@@ -1,10 +1,10 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyBN7rJvR7n3ZDx1ynHnraNoaK9FmHBHbwo",
-  authDomain: "docy-programming-folks.firebaseapp.com",
-  projectId: "docy-programming-folks",
-  storageBucket: "docy-programming-folks.appspot.com",
-  messagingSenderId: "670794873328",
-  appId: "1:670794873328:web:05ee241ad8f196abaac535",
+  apiKey: "AIzaSyD87FQWW0U9DCrJlCW10lZHPrr5TtyFLNE",
+  authDomain: "photo-craft.firebaseapp.com",
+  projectId: "photo-craft",
+  storageBucket: "photo-craft.appspot.com",
+  messagingSenderId: "234726298358",
+  appId: "1:234726298358:web:9b59d1d23566a65ce8d2d7",
 };
 
 export default firebaseConfig;
